@@ -24,7 +24,10 @@ class SettingsView extends StatelessWidget {
                 children: [
 
                   // 🔥 HEADER
-                  Text("Settings", style: AppTextStyles.h2),
+                  Text("Settings", style: TextStyle(
+                    color: AppColors.backgroundDark,
+                    fontSize: 26
+                  )),
 
                   SizedBox(height: AppSpacing.lg),
 
@@ -50,7 +53,10 @@ class SettingsView extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(vm.name ?? "User",
-                                style: AppTextStyles.h3),
+                                style: TextStyle(
+                                  color: AppColors.textPrimaryLight,
+                                  fontSize: 14
+                                )),
                             Text(vm.email ?? "",
                                 style: AppTextStyles.bodySmall),
                           ],
@@ -93,10 +99,6 @@ class SettingsView extends StatelessWidget {
                     title: "Dark Mode",
                     subtitle: "Toggle theme",
                     color: Colors.purple,
-                    // trailing: Switch(
-                    //   // value: vm.isDarkMode,
-                    //   // onChanged: (val) => vm.toggleTheme(),
-                    // ),
                   ),
 
                   _settingsTile(
@@ -132,7 +134,9 @@ class SettingsView extends StatelessWidget {
   Widget _sectionTitle(String title) {
     return Padding(
       padding: EdgeInsets.only(bottom: AppSpacing.sm),
-      child: Text(title, style: AppTextStyles.h3),
+      child: Text(title, style: TextStyle(
+        color: AppColors.backgroundDark
+      )),
     );
   }
 }
@@ -173,8 +177,14 @@ Widget _settingsTile({
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(title, style: AppTextStyles.bodyMedium),
-                Text(subtitle, style: AppTextStyles.labelSmall),
+                Text(title, style: TextStyle(
+                  color: AppColors.backgroundDark,
+                  fontSize: 14
+                )),
+                Text(subtitle, style: TextStyle(
+                    color: AppColors.backgroundDark,
+                    fontSize: 12
+                )),
               ],
             ),
           ),

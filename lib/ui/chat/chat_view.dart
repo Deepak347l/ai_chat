@@ -178,6 +178,12 @@ class _ChatViewState extends State<ChatView> {
           showRewardDialog(context, 10);
         }
         },
+          style: ElevatedButton.styleFrom(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 24,
+              vertical: 6,
+            ),
+          ),
         child: Text("Continue Watching"),
         )
         ],
@@ -198,9 +204,25 @@ class _ChatViewState extends State<ChatView> {
                         ),
                         child:TextField(
                           controller: controller,
-                          decoration: const InputDecoration(
+
+                          decoration: InputDecoration(
                             hintText: "Message...",
                             border: InputBorder.none,
+
+
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(12),
+                              borderSide: const BorderSide(
+                                color: AppColors.textSecondaryDark,
+                              ),
+                            ),
+
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(12),
+                              borderSide: const BorderSide(
+                                color: AppColors.textPrimaryDark,
+                              ),
+                            ),
                           ),
                         ),
                       ),

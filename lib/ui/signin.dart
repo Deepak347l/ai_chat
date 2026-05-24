@@ -13,6 +13,7 @@ class SigninView extends StatelessWidget {
 
   final _formKey = GlobalKey<FormState>();
 
+
   @override
   Widget build(BuildContext context) {
     return Consumer<AuthViewModel>(
@@ -86,22 +87,72 @@ class SigninView extends StatelessWidget {
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      // EMAIL
+
                                       TextFormField(
-                                        decoration: const InputDecoration(
-                                          labelText: 'Email',
+                                        style: TextStyle(
+                                          color: AppColors.backgroundDark,
+                                          fontSize: 16
+                                        ),
+                                        decoration: InputDecoration(
+                                          hintText: 'Enter email id', // placeholder
+                                          filled: true,
+                                          fillColor: AppColors.backgroundLight,
+                                          hintStyle: const TextStyle(
+                                            color: Colors.grey,
+                                            fontSize: 16,
+                                          ),
+
+                                          enabledBorder: OutlineInputBorder(
+                                            borderRadius: BorderRadius.circular(12),
+                                            borderSide: const BorderSide(
+                                              color: AppColors.textSecondaryDark,
+                                            ),
+                                          ),
+
+                                          focusedBorder: OutlineInputBorder(
+                                            borderRadius: BorderRadius.circular(12),
+                                            borderSide: const BorderSide(
+                                              color: AppColors.textSecondaryDark,
+                                            ),
+                                          ),
+
                                         ),
                                         validator: Validators.email,
                                         onChanged: vm.setEmail,
                                       ),
+
                                       SizedBox(height: AppSpacing.md),
 
                                       // PASSWORD
                                       TextFormField(
-                                        decoration: const InputDecoration(
-                                          labelText: 'Password',
+                                        style: TextStyle(
+                                          color: AppColors.backgroundDark,
+                                          fontSize: 16
                                         ),
-                                        obscureText: true,
+                                        decoration: InputDecoration(
+                                          hintText: 'Enter password', // placeholder
+                                          filled: true,
+                                          fillColor: AppColors.backgroundLight,
+                                          hintStyle: const TextStyle(
+                                            color: Colors.grey,
+                                            fontSize: 16,
+                                          ),
+
+                                          enabledBorder: OutlineInputBorder(
+                                            borderRadius: BorderRadius.circular(12),
+                                            borderSide: const BorderSide(
+                                              color: AppColors.textSecondaryDark,
+                                            ),
+                                          ),
+
+                                          focusedBorder: OutlineInputBorder(
+                                            borderRadius: BorderRadius.circular(12),
+                                            borderSide: const BorderSide(
+                                              color: AppColors.textSecondaryDark,
+                                            ),
+                                          ),
+
+                                        ),
                                         validator: Validators.password,
                                         onChanged: vm.setPassword,
                                       ),
@@ -131,6 +182,9 @@ class SigninView extends StatelessWidget {
                                               vm.login(context);
                                             }
                                           },
+                                          style: ElevatedButton.styleFrom(
+                                            backgroundColor: AppColors.primary
+                                          ),
                                           child: Text(
                                             "Login",
                                             style: AppTextStyles.buttonLarge,
@@ -155,14 +209,14 @@ class SigninView extends StatelessWidget {
                                         ],
                                       ),
 
-                                      SizedBox(height: AppSpacing.lg),
+                                      SizedBox(height: AppSpacing.xs),
 
                                       // GOOGLE BUTTON
                                       SizedBox(
                                         width: double.infinity,
                                         child: OutlinedButton.icon(
                                           onPressed: () => vm.googleSignIn(context),
-                                          icon: const Icon(Icons.g_mobiledata, size: 26),
+                                          icon: const Icon(Icons.g_mobiledata, size: 26,color: AppColors.primary,),
                                           label: Text(
                                             "Continue with Google",
                                             style: AppTextStyles.buttonMedium,
@@ -180,17 +234,25 @@ class SigninView extends StatelessWidget {
                                             "Don't have an account? ",
                                             style: AppTextStyles.bodySmall,
                                           ),
-                                          GestureDetector(
-                                            onTap: () {
-                                             Navigator.push(context, MaterialPageRoute(builder: (context) => SignupView()));
-                                            },
-                                            child: Text(
-                                              "Sign Up",
-                                              style: AppTextStyles.labelLarge.copyWith(
-                                                color: AppColors.primary,
+                                             SizedBox(width: 8,),
+                                             ElevatedButton(
+                                              onPressed:() {
+                                               vm.clearUserInput();
+                                                Navigator.push(context, MaterialPageRoute(builder: (context) => SignupView()));
+                                              },
+                                              style: ElevatedButton.styleFrom(
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius: BorderRadius.circular(20)
+                                                ),
+                                                padding: const EdgeInsets.symmetric(
+                                                  horizontal: 28,
+                                                  vertical: 4
+                                                ),
+                                                backgroundColor: AppColors.secondary
                                               ),
+                                              child: Text("Register Now",style: AppTextStyles.bodyMedium,),
                                             ),
-                                          ),
+
                                         ],
                                       ),
 

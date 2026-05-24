@@ -111,7 +111,9 @@ class HomeView extends StatelessWidget {
               SizedBox(height: AppSpacing.lg),
 
               //  QUICK ACTIONS
-              Text("Quick Actions", style: AppTextStyles.h3),
+              Text("Quick Actions", style:TextStyle(
+                color: AppColors.backgroundDark
+              )),
               SizedBox(height: AppSpacing.md),
 
               Row(
@@ -140,13 +142,17 @@ class HomeView extends StatelessWidget {
               SizedBox(height: AppSpacing.lg),
 
               //  RECENT ACTIVITY
-              Text("Recent Activity", style: AppTextStyles.h3),
+              Text("Recent Activity", style: TextStyle(
+                color: AppColors.backgroundDark
+              ),),
               SizedBox(height: AppSpacing.md),
 
               Expanded(
                 child:
                     walletVM.transactions.isEmpty ? const Center(
-                      child: Text("No transactions yet"),
+                      child: Text("No transactions yet",style: TextStyle(
+                        color: AppColors.error
+                      ),),
                     ):
                     ListView.builder(
                       itemCount: walletVM.transactions.length,

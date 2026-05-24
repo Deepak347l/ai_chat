@@ -35,7 +35,10 @@ class _WithdrawViewState extends State<WithdrawView> {
                   // 🔙 BACK
                   Row(
                     children: [
-                      Text("Withdraw", style: AppTextStyles.h2),
+                      Text("Withdraw", style: TextStyle(
+                        color: AppColors.backgroundDark,
+                        fontSize: 26
+                      )),
                     ],
                   ),
 
@@ -72,7 +75,10 @@ class _WithdrawViewState extends State<WithdrawView> {
                   SizedBox(height: AppSpacing.lg),
 
                   // 💸 ENTER AMOUNT
-                  Text("Enter Amount", style: AppTextStyles.h3),
+                  Text("Enter Amount", style: TextStyle(
+                    color: AppColors.backgroundDark,
+                    fontSize: 20
+                  )),
                   SizedBox(height: AppSpacing.sm),
 
                   TextField(
@@ -86,7 +92,9 @@ class _WithdrawViewState extends State<WithdrawView> {
                   SizedBox(height: AppSpacing.lg),
 
                   // 💳 PAYMENT METHOD
-                  Text("Select Method", style: AppTextStyles.h3),
+                  Text("Select Method", style: TextStyle(
+                    color: AppColors.backgroundDark
+                  )),
                   SizedBox(height: AppSpacing.sm),
 
                   Row(
@@ -162,7 +170,7 @@ class _WithdrawViewState extends State<WithdrawView> {
         padding: EdgeInsets.all(AppSpacing.md),
         decoration: BoxDecoration(
           color: isSelected
-              ? AppColors.primary.withOpacity(0.1)
+              ? AppColors.primary
               : AppColors.surfaceLight,
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
@@ -170,7 +178,10 @@ class _WithdrawViewState extends State<WithdrawView> {
           ),
         ),
         child: Center(
-          child: Text(method, style: AppTextStyles.bodyMedium),
+          child: Text(method, style: TextStyle(
+            color: AppColors.backgroundDark,
+            fontSize: 14
+          )),
         ),
       ),
     );

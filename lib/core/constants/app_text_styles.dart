@@ -1,3 +1,4 @@
+import 'package:ai_chat/core/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -49,6 +50,7 @@ class AppTextStyles {
     fontWeight: FontWeight.w400,
     height: 1.5,
     fontFamily: fontFamily,
+    color: AppColors.backgroundDark
   );
 
   // ================= LABELS =================
@@ -64,6 +66,7 @@ class AppTextStyles {
     fontWeight: FontWeight.w500,
     letterSpacing: 0.3,
     fontFamily: fontFamily,
+    color: AppColors.dividerDark
   );
 
   static TextStyle labelSmall = TextStyle(
@@ -86,6 +89,7 @@ class AppTextStyles {
     fontWeight: FontWeight.w600,
     letterSpacing: 0.5,
     fontFamily: fontFamily,
+    color: AppColors.primary
   );
 
   // ================= CAPTION =================

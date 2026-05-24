@@ -29,7 +29,10 @@ class WalletView extends StatelessWidget {
                   // 🔥 HEADER
                   Text(
                     "My Wallet",
-                    style: AppTextStyles.h2,
+                    style: TextStyle(
+                      color: AppColors.backgroundDark,
+                      fontSize: 26
+                    )
                   ),
 
                   SizedBox(height: AppSpacing.lg),
@@ -50,8 +53,11 @@ class WalletView extends StatelessWidget {
 
                         Text(
                           "Available Balance",
-                          style: AppTextStyles.bodySmall
-                              .copyWith(color: Colors.white70),
+                          style: TextStyle(
+                            color: AppColors.backgroundLight,
+                            fontSize: 14
+
+                          ),
                         ),
 
                         SizedBox(height: 8),
@@ -92,7 +98,9 @@ class WalletView extends StatelessWidget {
                                 onPressed: () {
                                   MainNavigationView.changeTab(context, 1);
                                 },
-                                child: Text("Earn More 💬"),
+                                child: Text("Earn More 💬",style: TextStyle(
+                                  color: AppColors.primaryLight
+                                ),),
                               ),
                             ),
                           ],
@@ -107,7 +115,10 @@ class WalletView extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("Total Earnings", style: AppTextStyles.h3),
+                      Text("Total Earnings", style: TextStyle(
+                        color: AppColors.backgroundDark,
+                        fontSize: 16
+                      )),
                       Text(
                         "₹${vm.wallet?.totalEarning}",
                         style: AppTextStyles.h3
@@ -119,7 +130,10 @@ class WalletView extends StatelessWidget {
                   SizedBox(height: AppSpacing.md),
 
                   // 📜 TRANSACTIONS TITLE
-                  Text("Recent Activity", style: AppTextStyles.h3),
+                  Text("Recent Activity", style: TextStyle(
+                      color: AppColors.backgroundDark,
+                      fontSize: 16
+                  )),
 
                   SizedBox(height: AppSpacing.md),
 

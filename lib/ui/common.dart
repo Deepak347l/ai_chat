@@ -73,15 +73,16 @@ class _MainNavigationViewState extends State<MainNavigationView> {
       body: _screens[_currentIndex],
 
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: AppColors.secondary,
         currentIndex: _currentIndex,
         onTap: (index) {
           setState(() {
             _currentIndex = index;
           });
         },
-        type: BottomNavigationBarType.shifting,
-        unselectedItemColor: Colors.grey,
-        selectedItemColor: AppColors.primary,
+        type: BottomNavigationBarType.fixed,
+        unselectedItemColor: AppColors.textPrimaryLight,
+        selectedItemColor: AppColors.backgroundLight,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.chat), label: "Chat"),
@@ -89,6 +90,7 @@ class _MainNavigationViewState extends State<MainNavigationView> {
           BottomNavigationBarItem(icon: Icon(Icons.money), label: "Withdraw"),
           BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Settings"),
         ],
+
       ),
     );
   }

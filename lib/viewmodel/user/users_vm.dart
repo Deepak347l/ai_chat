@@ -26,6 +26,13 @@ class AuthViewModel extends ChangeNotifier {
   void setName(String value) => name = value;
 
 
+
+  void clearUserInput(){
+    email='';
+    password='';
+  }
+
+
   bool isGenderSelected = false;
 
 
